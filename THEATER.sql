@@ -58,9 +58,11 @@ CREATE TABLE SALLES(
 CREATE TABLE TARIFS(
    Id_TARIFS INT NOT NULL AUTO_INCREMENT,
    TARIF FLOAT NOT NULL,
-   SYNOPSIS VARCHAR(50) NOT NULL,
+   DESCRIP VARCHAR(50) NOT NULL,
    PRIMARY KEY (Id_TARIFS) 
 ) ENGINE=InnoDB;
+
+/* alimentation de la base de données */
 
 insert into CINEMA (NOM_CINEMA, ADRESSE_P) values ('CGR LILLE', '9903 Chinook Alley');
 insert into CINEMA (NOM_CINEMA, ADRESSE_P) values ('CGR TOULOUSE', '08 Spaight Way');
@@ -98,9 +100,11 @@ insert into SALLES (Id_SEANCES, NB_DE_PLACES) values (3,49);
 insert into SALLES (Id_SEANCES, NB_DE_PLACES) values (4,100);
 insert into SALLES (Id_SEANCES, NB_DE_PLACES) values (5,150);
 
-insert into TARIFS (TARIF, SYNOPSIS) values (9.20, 'PLEIN TARIF');
-insert into TARIFS (TARIF, SYNOPSIS) values (7.60, 'ETUDIANT');
-insert into TARIFS (TARIF, SYNOPSIS) values (5.90, 'MOINS DE 14ANS');
+insert into TARIFS (TARIF, DESCRIP) values (9.20, 'PLEIN TARIF');
+insert into TARIFS (TARIF, DESCRIP) values (7.60, 'ETUDIANT');
+insert into TARIFS (TARIF, DESCRIP) values (5.90, 'MOINS DE 14ANS');
+
+/* création d'un administrateur et d'une vue lambda avec les permissions spécifique à chaque */
 
 CREATE USER 'admin'@'localhost' IDENTIFIED BY '$2y$10$MCEYU57NNuSPWEURSgVlr.8QmRu7MkRt6Vn3od/SnPCM.p4EySOSe';
 CREATE USER 'lambda'@'localhost' IDENTIFIED BY '$2y$10$ZrhgJiGQZ2/fy1rOyJK56ekYVzYgpfjW/NeCtKXp13J/rTv./3wF.';
