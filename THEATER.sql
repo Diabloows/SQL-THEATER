@@ -109,8 +109,8 @@ insert into TARIFS (TARIF, DESCRIP) values (5.90, 'MOINS DE 14ANS');
 CREATE USER 'admin'@'localhost' IDENTIFIED BY '$2y$10$MCEYU57NNuSPWEURSgVlr.8QmRu7MkRt6Vn3od/SnPCM.p4EySOSe';
 CREATE USER 'lambda'@'localhost' IDENTIFIED BY '$2y$10$ZrhgJiGQZ2/fy1rOyJK56ekYVzYgpfjW/NeCtKXp13J/rTv./3wF.';
 
-GRANT ALL ON theater.* TO 'admin'@'localhost'
-GRANT SELECT ON theater.* TO 'lambda'@'localhost'
+GRANT ALL ON theater.* TO 'admin'@'localhost';
+GRANT SELECT ON theater.* TO 'lambda'@'localhost';
 
 /* pour sauvegarder toutes les bases de données*/
 'mysqldump --user=mon_user --password=mon_password --all-databases > fichier_destination.sql'
